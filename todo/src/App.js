@@ -1,10 +1,10 @@
+import TodoList from './TodoList.js'
 import './App.css';
-import BoxList from "./BoxList";
 
 function App() {
   return (
     <div className="App">
-      <BoxList />
+      <TodoList />
     </div>
   );
 }
