@@ -11,6 +11,11 @@ const TodoList = () =>{
   const removeTodo = id=>{
     setTodos(todos=> todos.filter(t=>t.id!==id))
   }
+  const editTodo = (id, updatedTodo)=>{
+    setTodos(todos.map(t=>(
+      t.id !== id? t : t.todo = updatedTodo
+    ))
+    )}
 
   return(
     <div>
@@ -19,7 +24,7 @@ const TodoList = () =>{
         {todos.map(todo=>{
           return(
             <li key={todo.id}>
-              <Todo  id={todo.id} todo={todo.todo} removeTodo={removeTodo}/>
+              <Todo  id={todo.id} todo={todo.todo} removeTodo={removeTodo} editTodo={editTodo}/>
             </li>
           )
         })}
